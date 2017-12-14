@@ -1,0 +1,46 @@
+.terminalButton {
+  width: 100%;
+  margin-bottom: .5em;
+}
+
+.card {
+  padding: 0.5em 1em;
+  margin-top: 1em;
+}
+
+nav {
+  background: white;
+}
+
+nav a {
+  color: black;
+}
+
+nav .brand-logo {
+  color: black;
+}
+
+body {
+  background: #e8e8e8
+}
+
+nav ul a {
+  color: black;
+}
+
+.btn {
+  background: rgb(73, 94, 110);
+  color: white;
+}
+
+.btn:hover {
+  background: rgb(73, 94, 110);  
+}
+
+.backButton {
+  margin-top: 2em
+}
+
+h3 {
+  color: rgba(0,0,0,.70)
+}
