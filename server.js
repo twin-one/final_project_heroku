@@ -94,7 +94,7 @@ app.get('/conditions/:departure/:arrival', (req, res) => {
                     .orderBy('created_at', 'DESC')
                     .fetch()
                     .then(nextFerryConditions => {
-                        result.next_cond = nextFerryConditions.attributes
+                        result.next_cond = nextFerryConditions ? nextFerryConditions.attributes : null
                     })
                     .then(sendData => {
                         res.send(result)
