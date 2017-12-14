@@ -21,7 +21,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "knex migrate:rollback && knex migrate:latest && knex seed:run",
     "server": "node server.js",
-    "scraper": "node scraper.js"
+    "scraper": "node scraper.js",
+    "reactStart": "cd bc_ferries_app && npm start"
   },
   "author": "",
   "license": "ISC"
