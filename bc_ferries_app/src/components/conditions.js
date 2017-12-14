@@ -40,7 +40,7 @@ class Conditions extends Component {
     getCurrentSailingData = () => {
         let arrivalHyphenated = this.state.arrival_terminal.replace(" ", "-");
         let departureHyphenated = this.state.departure_terminal.replace(" ", '-');
-        let url = `http://localhost:8080/conditions/${departureHyphenated}/${arrivalHyphenated}`
+        let url = `/conditions/${departureHyphenated}/${arrivalHyphenated}`
 
         axios.get(url)
             .then(response => {
