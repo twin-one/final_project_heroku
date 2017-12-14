@@ -73,8 +73,8 @@ app.get('/conditions/:departure/:arrival', (req, res) => {
             .orderBy('sailing_time', 'ASC')
             .fetchAll()
             .then(followingFerries => {
-                result.next = followingFerries.models[0].attributes || null;
-                result.next_next = followingFerries.models[1].attributes || null;
+                result.next = followingFerries.models[0] ? followingFerries.models[0].attributes : null;
+                result.next_next = followingFerries.models[1] ? followingFerries.models[1].attributes : null;
                 // Now for the ferry sailing currently, we query the current conditions database for last updated. 
                 CurrentCondition.where({
                     departure_terminal: departure,
@@ -89,7 +89,7 @@ app.get('/conditions/:departure/:arrival', (req, res) => {
                     CurrentCondition.where({
                         departure_terminal: departure,
                         arrival_terminal: arrival,
-                        sailing_time: followingFerries.models[0].attributes.sailing_time
+                        sailing_time: followingFerries.models[0] ? followingFerries.models[0].attributes.sailing_time : null
                     })
                     .orderBy('created_at', 'DESC')
                     .fetch()
@@ -105,7 +105,7 @@ app.get('/conditions/:departure/:arrival', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-    res.sendFile('index.html', {root: __dirname + '/bc_ferries_app/build/index.html'})
+    res.sendFile('index.html', {root: __dirname + '/bc_ferries_app/build/'})
 })
 
 //Server listen function
