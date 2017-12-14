@@ -104,7 +104,7 @@ app.get('/conditions/:departure/:arrival', (req, res) => {
         })        
 });
 
-app.get('*', (res, req) => {
+app.get('*', (req, res) => {
     res.sendFile('index.html', {root: __dirname + '/bc_ferries_app/build/index.html'})
 })
 

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "proxy": "http://localhost:8080",
   "dependencies": {
     "axios": "^0.17.1",
     "body-parser": "^1.18.2",
@@ -18,11 +19,11 @@
   },
   "devDependencies": {},
   "scripts": {
+    "start": "(cd  bc_ferries_app && npm run build) concurrently \"npm run server\" \"npm run scraper\"",    
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "knex migrate:rollback && knex migrate:latest && knex seed:run",
+    "seed": "knex migrate:rollback && knex migrate:latest && knex seed:run",
     "server": "node server.js",
-    "scraper": "node scraper.js",
-    "reactStart": "cd bc_ferries_app && npm start"
+    "scraper": "node scraper.js"
   },
   "author": "",
   "license": "ISC"
