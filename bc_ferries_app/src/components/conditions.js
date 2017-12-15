@@ -45,6 +45,7 @@ class Conditions extends Component {
         axios.get(url)
             .then(response => {
                 let data = response.data;
+                console.log(data);
                 
                 let currentScheduledDeparture = data.current ? data.current.sailing_time : 'Not Found';
                 let currentActualDeparture = data.current ? data.current.actual_departure : 'Not Found';
