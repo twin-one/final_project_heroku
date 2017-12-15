@@ -1,4 +1,3 @@
-import { currentId } from 'async_hooks';
 const express = require('express')
 const app = express();
 const bodyParser = require('body-parser');
