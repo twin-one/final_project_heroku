@@ -20,7 +20,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "(cd  bc_ferries_app && npm install && npm run build); npm install; concurrently \"npm run server\" \"npm run scraper\"",
+    "start": "concurrently \"npm run server\" \"npm run scraper\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "knex migrate:rollback && knex migrate:latest && knex seed:run",
     "server": "node server.js",
