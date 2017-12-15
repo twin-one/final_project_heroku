@@ -45,9 +45,9 @@ app.get('/conditions/:departure/:arrival', (req, res) => {
     let todaysDate = moment(date).format('YYYY-MM-DD');
     let currentTime = moment(date).format('HH:mm');
 
-    console.log('todays date: ', todaysDate)
-    console.log('current time: ', currentTime)
-    
+    console.log('todays date: ', todaysDate);
+    console.log('current time: ', currentTime);
+
     let result = {  
         current: null,
         next: null,
