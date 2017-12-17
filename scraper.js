@@ -186,6 +186,15 @@ sailingData = (tableNum) => {
     });
 }
 
+sailingData(6);
+sailingData(26);
+sailingData(34);
+sailingData(42);
+conditionsData(8);
+conditionsData(13);
+conditionsData(23);
+conditionsData(28);
+
 new CronJob('0 */5 6-24 * * *', function() {
     sailingData(6);
     sailingData(26);
